@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can I call you Mine Butterfly❤️🦋?</title>
+     <!-- Link to external CSS file -->
+     <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <div class="gif-container">
+        <img class="gif-overlay" src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif" alt="Love Bear">
+        <div class="container">
+            <h2>Can I call you Mine Butterfly❤️🦋?</h2>
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Designed with <span style="color: #e44d26;">❤️</span> by <a href="https://example.com" style="color: #fff; text-decoration: none;">Rushuu</a></p>
+        </div>
+    </footer>
+
+    <script>
+        let yesButton = document.getElementById('yesButton');
+        let noButton = document.getElementById('noButton');
+        let gifContainer = document.querySelector('.gif-container');
+        let currentIndex = 0;
+    
+        yesButton.addEventListener('click', function () {
+           
+            let h2Element = document.querySelector('h2');
+            h2Element.style.display = 'none';
+    
+            // Remove unnecessary elements
+            yesButton.style.display = 'none';
+            noButton.style.display = 'none';
+    
+            // Replace the GIF with the provided URL
+            let gifImage = document.querySelector('.gif-overlay');
+            gifImage.src = 'https://media.tenor.com/hDWprNISP18AAAAi/cartoon-brown-bear.gif';
+    
+            // Create a new element to display the message
+            let messageElement = document.createElement('p');
+            messageElement.textContent = "WOOOO!!! Finally Butterfly is mine!!🦋😍";
+            messageElement.style.color = '#e44d26'; // Text color
+            messageElement.style.fontFamily = 'Arial, sans-serif'; // Font family
+            messageElement.style.fontSize = '24px'; // Font size
+            messageElement.style.fontWeight = 'bold'; // Font weight
+            messageElement.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)'; // Text shadow
+            // Append the message element to the container
+            gifContainer.appendChild(messageElement);
+        });
+    
+        noButton.addEventListener('click', function () {
+            // Increase the font size of the Yes button on each click of No
+            let fontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+            let newSize = parseInt(fontSize) + 5;
+            yesButton.style.fontSize = newSize + 'px';
+    
+            // Change the text of the No button to alternate options
+            let options = ['Pls', 'Are you sure?', 'What if Im really nice person?','What if Im will take care of u',
+             'Dobi please😒', 'Shiu pls😒', 'Sure?', 'I am going to die', 'Yes im dead', 'PRETTY PLEASE', 
+             'I will never say Dobi', 'gives u rose place of chaswand', 'bring hot water fy', 'will play uno', 
+             'give u loan on 0 ROI', 'will see some sunset', 'No',
+             'No😒', 'No😒😒', 'No😒😒😒', 'No😒😒😒😒', 'Ab to Yes bol Dobi','No😒😒😒', 'No😒😒😒', 'Butterfly🦋😒😒', 'No😒',
+             'No😒', 'No😒😒','Ab to Yes bol', 'No😒😒😒', 'No😒😒😒😒',
+             'No😒😒😒😒', 'No😒😒😒', 'No😒😒', 'No😒',
+             'Ab to Yes bol',
+             'No😒', 'No😒😒', 'No😒😒😒', 'No😒😒😒😒',
+             'Ab to Yes bol🦋',
+             'No😒😒😒😒', 'No😒😒😒', 'No😒😒', 'No😒',
+             'Ab to Yes bol',
+            ];
+    
+            // Change the text of the No button and increment currentIndex
+            noButton.textContent = options[currentIndex];
+            currentIndex = (currentIndex + 1) % options.length;
+    
+            // Apply transition effect
+            noButton.style.transition = "transform 0.3s ease";
+            noButton.style.transform = "scale(1.1)";
+            setTimeout(() => {
+                noButton.style.transform = "scale(1)";
+            }, 300);
+        });
+    </script>
+    
+</body>
+</html>
